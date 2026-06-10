@@ -69,12 +69,12 @@ pipeline {
         BASE_URL            = "${params.BASE_URL}"
         API_BASE_URL        = "${params.BASE_URL}/api"
         CI                  = 'true'
-        ADMIN_EMAIL         = 'admin@test.com'
-        ADMIN_PASSWORD      = 'password123'
+        ADMIN_EMAIL         = 'admin@pilates.com'
+        ADMIN_PASSWORD      = 'admin123'
         CUSTOMER_EMAIL      = 'customer@test.com'
-        CUSTOMER_PASSWORD   = 'password123'
-        INSTRUCTOR_EMAIL    = 'instructor@test.com'
-        INSTRUCTOR_PASSWORD = 'password123'
+        CUSTOMER_PASSWORD   = 'password'
+        INSTRUCTOR_EMAIL    = 'jono@femm.com'
+        INSTRUCTOR_PASSWORD = 'password'
     }
 
     // ─── STAGES ─────────────────────────────────────────────────
