@@ -66,22 +66,15 @@ pipeline {
     // Test kamu membaca BASE_URL, ADMIN_EMAIL, dll dari process.env
     // Jadi kita set di sini supaya Playwright bisa baca.
     environment {
-        BASE_URL         = "${params.BASE_URL}"
-        API_BASE_URL     = "${params.BASE_URL}/api"
-        CI               = 'true'
-
-        // Credentials dari Jenkins Credentials Manager
-        // Cara setup: Jenkins > Manage Jenkins > Credentials > Add Credentials
-        //   Kind: Secret text
-        //   ID: admin-email        Value: admin@test.com
-        //   ID: admin-password     Value: password123
-        //   (ulangi untuk customer dan instructor)
-        ADMIN_EMAIL         = credentials('admin-email')
-        ADMIN_PASSWORD      = credentials('admin-password')
-        CUSTOMER_EMAIL      = credentials('customer-email')
-        CUSTOMER_PASSWORD   = credentials('customer-password')
-        INSTRUCTOR_EMAIL    = credentials('instructor-email')
-        INSTRUCTOR_PASSWORD = credentials('instructor-password')
+        BASE_URL            = "${params.BASE_URL}"
+        API_BASE_URL        = "${params.BASE_URL}/api"
+        CI                  = 'true'
+        ADMIN_EMAIL         = 'admin@test.com'
+        ADMIN_PASSWORD      = 'password123'
+        CUSTOMER_EMAIL      = 'customer@test.com'
+        CUSTOMER_PASSWORD   = 'password123'
+        INSTRUCTOR_EMAIL    = 'instructor@test.com'
+        INSTRUCTOR_PASSWORD = 'password123'
     }
 
     // ─── STAGES ─────────────────────────────────────────────────
