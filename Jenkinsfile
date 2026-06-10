@@ -89,13 +89,9 @@ pipeline {
         // cleanWs() = bersihkan sisa-sisa build sebelumnya supaya mulai fresh.
         stage('Checkout') {
             steps {
-                cleanWs()
-                git branch: 'main',
-                    url: 'https://github.com/USERNAME_KAMU/automation-tests.git'
-                    // Ganti USERNAME_KAMU dengan GitHub username kamu
-                    // Kalau repo private, tambahkan:
-                    // credentialsId: 'github-token'
-            }
+        echo "✅ Code sudah di-checkout otomatis dari SCM"
+        echo "📁 Working directory: ${env.WORKSPACE}"
+    }
         }
 
         // ═══════════════════════════════════════
