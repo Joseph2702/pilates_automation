@@ -14,7 +14,7 @@ export default defineConfig({
     ['html', { outputFolder: 'reports/html-report' }],
     ['json', { outputFile: 'reports/test-results.json' }],
     ['junit', { outputFile: 'reports/junit.xml' }],
-    ['list'],
+    ['allure-playwright', { outputFolder: 'allure-results' }],
   ],
 
   use: {
@@ -24,6 +24,9 @@ export default defineConfig({
     video: 'retain-on-failure',
     actionTimeout: 10000,
     navigationTimeout: 30000,
+    extraHTTPHeaders: {
+        'ngrok-skip-browser-warning': 'true',   // ← TAMBAH INI
+    },
   },
 
   globalTimeout: 30 * 60 * 1000,
@@ -31,23 +34,37 @@ export default defineConfig({
 
   projects: [
     {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      name: 'api-smoke',
+      testDir: './tests/api/auth',
+      use: { browserName: 'chromium' },
     },
     {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
+      name: 'api-regression',
+      testDir: './tests/api',
+      use: { browserName: 'chromium' },
+    },
+
+    // ─── UI TESTS ───
+    {
+      name: 'ui-smoke',
+      testDir: './tests/ui/customer/auth',
+      use: {
+        browserName: 'chromium',
+        headless: true,
+        screenshot: 'only-on-failure',
+        video: 'retain-on-failure',
+      },
     },
     {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
+      name: 'ui-regression',
+      testDir: './tests/ui',
+      use: {
+        browserName: 'chromium',
+        headless: true,
+        screenshot: 'only-on-failure',
+        video: 'retain-on-failure',
+        trace: 'retain-on-failure',
+      },
     },
   ],
-
-  webServer: {
-    command: 'php artisan serve',
-    url: 'http://localhost:8000',
-    reuseExistingServer: !process.env.CI,
-    timeout: 120 * 1000,
-  },
 });
