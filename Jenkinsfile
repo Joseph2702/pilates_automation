@@ -107,7 +107,7 @@ pipeline {
                     npm ci
 
                     echo "🌐 Installing Playwright Chromium..."
-                    npx playwright install --with-deps chromium
+                    npx playwright install chromium
                 '''
             }
         }
