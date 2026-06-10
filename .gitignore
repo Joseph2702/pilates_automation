@@ -1,3 +1,10 @@
+# Reports
+reports/
+allure-results/
+allure-report/
+
+# Auth state (Playwright saved login)
+playwright/.auth/
 
 # Playwright
 node_modules/
@@ -6,3 +13,30 @@ node_modules/
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
+
+# Application URLs
+BASE_URL=http://localhost:8000
+API_BASE_URL=http://localhost:8000/api
+
+# Database Configuration
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=pilates_test
+DB_USER=linkit
+DB_PASSWORD=
+
+# Test User Credentials
+ADMIN_EMAIL=admin@test.com
+ADMIN_PASSWORD=password123
+CUSTOMER_EMAIL=customer@test.com
+CUSTOMER_PASSWORD=password123
+INSTRUCTOR_EMAIL=instructor@test.com
+INSTRUCTOR_PASSWORD=password123
+
+# Timeouts (in milliseconds)
+TIMEOUT=30000
+NAVIGATION_TIMEOUT=30000
+
+# Environment
+ENV=test
+DEBUG=false
