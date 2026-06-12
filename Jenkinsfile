@@ -165,6 +165,14 @@ pipeline {
             steps {
                 sh '''
                     echo "🔥 Running API Smoke Tests..."
+                    echo ""
+                    echo "📋 Configuration Check:"
+                    echo "  BASE_URL: ${BASE_URL}"
+                    echo "  API_BASE_URL: ${API_BASE_URL}"
+                    echo "  ADMIN_EMAIL: ${ADMIN_EMAIL}"
+                    echo "  CI: ${CI}"
+                    echo ""
+                    
                     npx playwright test --project=api-smoke
                 '''
             }

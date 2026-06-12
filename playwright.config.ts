@@ -1,7 +1,5 @@
 import { defineConfig, devices } from '@playwright/test';
-import dotenv from 'dotenv';
-
-dotenv.config({ path: '.env.test' });
+import { envConfig } from './shared/config/env.config';
 
 export default defineConfig({
   testDir: './tests',
@@ -18,14 +16,14 @@ export default defineConfig({
   ],
 
   use: {
-    baseURL: process.env.BASE_URL || 'http://localhost:8000',
+    baseURL: envConfig.BASE_URL,
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
     actionTimeout: 10000,
     navigationTimeout: 30000,
     extraHTTPHeaders: {
-        'ngrok-skip-browser-warning': 'true',   // ← TAMBAH INI
+        'ngrok-skip-browser-warning': 'true',
     },
   },
 
