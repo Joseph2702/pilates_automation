@@ -43,7 +43,7 @@ pipeline {
     parameters {
         string(
             name: 'BASE_URL',
-            defaultValue: 'https://xxxx.ngrok-free.app',
+            defaultValue: 'https://manhunt-snowflake-winnings.ngrok-free.dev/',
             description: 'Ngrok URL dari app Pilates kamu (copy dari terminal Ngrok)'
         )
         choice(
