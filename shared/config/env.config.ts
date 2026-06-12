@@ -14,13 +14,14 @@ export const envConfig = {
   DB_USER: process.env.DB_USER || 'linkit',
   DB_PASSWORD: process.env.DB_PASSWORD || '',
 
+
   // Test Data
-  ADMIN_EMAIL: process.env.ADMIN_EMAIL || 'admin@test.com',
-  ADMIN_PASSWORD: process.env.ADMIN_PASSWORD || 'password123',
-  CUSTOMER_EMAIL: process.env.CUSTOMER_EMAIL || 'customer@test.com',
-  CUSTOMER_PASSWORD: process.env.CUSTOMER_PASSWORD || 'password123',
-  INSTRUCTOR_EMAIL: process.env.INSTRUCTOR_EMAIL || 'instructor@test.com',
-  INSTRUCTOR_PASSWORD: process.env.INSTRUCTOR_PASSWORD || 'password123',
+  ADMIN_EMAIL: process.env.ADMIN_EMAIL || 'admin@pilates.com',
+  ADMIN_PASSWORD: process.env.ADMIN_PASSWORD || 'admin123',
+  CUSTOMER_EMAIL: process.env.CUSTOMER_EMAIL || 'johnpantau@gmail.com',
+  CUSTOMER_PASSWORD: process.env.CUSTOMER_PASSWORD || 'password',
+  INSTRUCTOR_EMAIL: process.env.INSTRUCTOR_EMAIL || 'jono@femm.com',
+  INSTRUCTOR_PASSWORD: process.env.INSTRUCTOR_PASSWORD || 'password',
 
   // Timeouts
   TIMEOUT: parseInt(process.env.TIMEOUT || '30000', 10),
